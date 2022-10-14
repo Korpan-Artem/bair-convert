@@ -1,0 +1,70 @@
+.accordion-content {
+    overflow: hidden;
+    transition: height 300ms linear 0s;
+  }
+  
+  .accordion-border-top {
+    border-top: 2px solid #fff;
+  }
+
+  .content-box {
+    margin-top: 20px;
+      font-size: 12px;
+  }
+
+  .accordion-box {
+      background: #E9EAEB;
+  }
+
+  .accordion-main-title {
+      text-align: center;
+      padding: 20px 40px;
+  }
+
+.accordion-title {
+    font-size: 12px;
+    cursor: pointer;
+    position: relative;
+}
+.accordion-title:before {
+    content: "";
+    width: 15px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    margin: auto;
+}
+
+.accordion-title:after {
+    content: "";
+    width: 3px;
+    height: 15px;
+    background: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 26px;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+.active:before{
+    background: #000;
+}
+
+.active:after{
+    background: #000;
+}
+
+.accordion-title.active::after{
+    display: none;
+}
+
+
+.two-storelist__item.active {
+    background: #E9EAEB;
+    color: #000;
+}
