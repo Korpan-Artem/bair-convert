@@ -8,28 +8,6 @@ module.exports = {
     defaultLangKey: 'en'
   },
   plugins: [
-    {
-      resolve: "gatsby-source-strapi",
-      options: {
-        apiURL: "http://localhost:1337",
-        collectionTypes: ["tests"],
-        // Extract images from markdown fields.
-        markdownImages: {
-          typesToParse: {
-            Article: ["body"],
-            ComponentBlockBody: ["text"],
-          },
-        },
-        // Only include specific locale.
-        locale: "en", // default to all
-        // Include drafts in build.
-        preview: true, // defaults to false
-        // Use application token.
-        token:
-          'Your-strapi-api-token',
-        // Add additional headers.
-        headers: {},
-      },
-    },
+
   ],
 }
