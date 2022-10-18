@@ -13,14 +13,14 @@ const MainBannerWithText = () => {
           та використовуйте
           як килимок для ігор
           чи ковдри</p>
-        <img src={icon_promo} className={"icon_promo"} />
+        <img src={icon_promo} className={"icon_promo"} alt={""}/>
         <p className={"promo-subtext promo-icon-subtext"}>
           Конверт передбачає прання
           при делікатному режимі
         </p>
       </div>
       <div className={"main_banner_image"}>
-        <img src={image_banner} className={"image_banner"} />
+        <img src={image_banner} className={"image_banner"} alt={""}/>
       </div>
     </>
   )

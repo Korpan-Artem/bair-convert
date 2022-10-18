@@ -22,13 +22,13 @@
 
 .multibutton {
     position: fixed;
-    right: 30px;
+    right: 35px;
     bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     transition: 0.2s ease;
     z-index: 50;
     font-family: Mulish, serif;
@@ -69,7 +69,7 @@
 }
 
 .multibutton__title {
-    font-size: 15px;
+    font-size: 18px;
     color: #fff;
     text-decoration: none;
     background: rgba(0,0,0,0.8);
@@ -87,8 +87,8 @@
 }
 
 .multibutton__button {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     background: #A0E312;
     border-radius: 50%;
     display: flex;
@@ -97,6 +97,8 @@
     cursor: pointer;
     animation: animation_button 3s linear infinite;
     transition: all 200ms ease-out;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .multibutton__image {

@@ -6,7 +6,7 @@ const MainBanner = () => {
   return (
     <div className="back-to-top-wrapper">
       <a href="#top" className="back-to-top-link" aria-label="Scroll to Top">
-        <img className={"back-arrow-image"} src={arrow}/>
+        <img className={"back-arrow-image"} src={arrow} alt={""}/>
       </a>
     </div>
   )

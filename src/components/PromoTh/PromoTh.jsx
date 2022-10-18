@@ -13,7 +13,7 @@ const PromoTh = () => {
           конверта або коляски
         </h3>
       </div>
-      <img src={promoTh} className={"image__promo_banner"} />
+      <img src={promoTh} className={"image__promo_banner"} alt={""}/>
     </div>
   )
 }

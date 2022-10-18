@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import item1 from "../../images/promo.png"
 import item2 from "../../images/promoBottom.png"
 import SliderWithTwo from "../SliderWithTwo/SliderWithTwo";
@@ -13,18 +13,21 @@ const SliderPromoSlider = ({ data }) => {
             <img
               src={item1}
               className="instagram-image"
+              alt={""}
             />
           </div>
           <div className={"three-itempage__max-item-wrapper"}>
             <img
               src={item2}
               className="instagram-image"
+              alt={""}
             />
           </div>
           <div className={"three-itempage__max-item-wrapper"}>
             <img
               src={item1}
               className="instagram-image"
+              alt={""}
             />
           </div>
         </SliderWithTwo>

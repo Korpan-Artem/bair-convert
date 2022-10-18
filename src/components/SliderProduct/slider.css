@@ -69,6 +69,72 @@
   top: 48%;
 }
 
+@media (max-width: 1920px) {
+  .glider-next-vector::before,
+  .glider-prev-vector::before {
+    width: 18px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  .glider-prev-vector::before {
+    transform: translate(0, -31px);
+  }
+
+  .glider-prev-vector:hover,.glider-next-vector:hover {
+    cursor: pointer;
+  }
+
+  .glider-prev-vector {
+    left:35px;
+  }
+  .glider-next-vector {
+    right:35px;
+  }
+}
+
+@media (max-width: 414px){
+  .glider-next-vector::before,
+  .glider-prev-vector::before {
+    width: 14px;
+    height: 26px;
+    margin-left: 10px;
+  }
+
+  .glider-prev-vector::before {
+    transform: translate(0, -31px);
+  }
+
+  .glider-prev-vector {
+    left:30px;
+  }
+  .glider-next-vector {
+    right:30px;
+  }
+}
+
+@media (max-width: 393px) {
+  .glider-next-vector::before,
+  .glider-prev-vector::before {
+    width: 13px;
+    height: 24px;
+    margin-left: 10px;
+  }
+
+  .glider-prev-vector::before {
+    transform: translate(0, -31px);
+  }
+
+  .glider-prev-vector {
+    left:30px;
+  }
+  .glider-next-vector {
+    right:30px;
+  }
+}
+
+
+
 
 
 

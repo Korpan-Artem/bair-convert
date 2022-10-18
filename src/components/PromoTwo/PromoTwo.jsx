@@ -1,6 +1,5 @@
 import React from "react"
 import "../../styles/style.css"
-import promo from "../../images/promo.png";
 import two_banner from "../../images/two-banner.png";
 
 
@@ -23,7 +22,7 @@ const PromoTwo = () => {
         <div className={"main_banner_image_text"}>
         </div>
         <div>
-          <img src={two_banner} className={"image_banner"} />
+          <img src={two_banner} className={"image_banner"} alt={""} />
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import StrollersStandardSlider from "../StrollersStandardSlider/StrollersStandardSlider"
 import item1 from "../../images/promo.png"
 import item2 from "../../images/promoBottom.png"
@@ -14,6 +14,7 @@ const SliderPromoSlider = ({ data }) => {
                 <img
                   src={item1}
                   className="main_banner_image-promo"
+                  alt={""}
                 />
 
               </div>
@@ -21,6 +22,7 @@ const SliderPromoSlider = ({ data }) => {
             <img
               src={item2}
               className="main_banner_image-promo"
+              alt={""}
             />
           </div>
 

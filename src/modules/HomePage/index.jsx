@@ -14,31 +14,62 @@ import Accessories from "../../components/Accessories/Accessories";
 import Accordion from "../../components/Accordion/Accordion";
 import SliderPromoSlider from "../../components/SliderPromoSlider/SliderPromoSlider";
 import SliderInstagram from "../../components/SliderInstagram/SliderInstagram";
-import ToTop from "../../components/ToTop/ToTop";
 import CommunicationButton from "../../components/CommunicationButton/CommunicationButton";
+import {graphql,useStaticQuery} from "gatsby";
 
-
+export const query = graphql`
+    query HomePage{
+        allStrapiProducts {
+            nodes {
+                title
+                price
+                url
+                mainImage {
+                    localFile {
+                        url
+                    }
+                }
+            }
+        }
+        allStrapiAccessories {
+            nodes {
+                title
+                price
+                url
+                mainImage {
+                    localFile {
+                        url
+                    }
+                }
+            }
+        }
+    }
+`
 
 const HomePage = () => {
+    const {
+        allStrapiProducts,
+        allStrapiAccessories
+    } = useStaticQuery(query)
   return (
-    <>
+    <div className={"wrapper-mobile"}>
       <Header/>
       <MainBanner/>
       <MainBannerWithText/>
-      <MainCatalog/>
+      <MainCatalog data={allStrapiProducts}/>
       <Promo/>
       <PromoTwo/>
       <PromoTextBottom/>
       <PromoWithIcon/>
       <PromoTh/>
-      <Accessories/>
+      <Accessories data={allStrapiAccessories}/>
       <SliderPromoSlider/>
       <SliderInstagram/>
       <Accordion/>
       <Delivery/>
       <CommunicationButton/>
       <Footer/>
-    </>
+    </div>
   )
 }
 

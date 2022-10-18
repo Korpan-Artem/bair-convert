@@ -1,13 +1,23 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://bair.ua/`,
-    langs: ['en', 'ua'],
-    defaultLangKey: 'en'
   },
   plugins: [
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "http://127.0.0.1:1337",
+        queryLimit: 1000,
+        collectionTypes: [
+          "products",
+          "accessories"
+        ],
+        singleTypes: [
 
+        ]
+      },
+    },
   ],
 }
+
+// "https://sleepy-wildwood-40796.herokuapp.com" ||

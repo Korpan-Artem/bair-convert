@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import Glider from "react-glider";
 import "glider-js/glider.min.css";
@@ -6,14 +6,28 @@ import "./slider.css";
 import { useId } from "@reach/auto-id";
 
 const SliderProduct = ({ children }) => {
+  const [slide,setSlide] = useState(1);
   const id = useId();
+
+  const onSlide = (direction,slide) => {
+    if (direction && (slide < id)) {
+      setSlide(slide + 1)
+    }
+    if (!direction && (slide > 1)) {
+      setSlide(slide - 1)
+    }
+
+  }
+  console.log("children",children)
   return (
-    <div className={"relative"}>
+    <div className={"slider-product"}>
+      <div className={"relative"}>
       <button
         type="button"
         className="glider-prev-vector"
         aria-label="Previous"
         id={`prev-${id}`}
+        onClick={() => onSlide(0,slide)}
       >
         «
       </button>
@@ -22,12 +36,13 @@ const SliderProduct = ({ children }) => {
         className="glider-next-vector"
         aria-label="Next"
         id={`next-${id}`}
+        onClick={() => onSlide(1,slide)}
       >
         «
       </button>
+
       <Glider
         hasArrows
-        draggable
         slidesToShow={1}
         arrows={{
           prev: `#prev-${id}`,
@@ -39,13 +54,16 @@ const SliderProduct = ({ children }) => {
             settings: {
               slidesToShow: 1,
               slidesToScroll: "auto",
+              duration: 10
             },
+
           },
           {
             breakpoint: 479,
             settings: {
               slidesToShow: 1,
               slidesToScroll: "auto",
+              duration: 10
             },
           },
           {
@@ -53,12 +71,14 @@ const SliderProduct = ({ children }) => {
             settings: {
               slidesToShow: 1,
               slidesToScroll: "auto",
+              duration: 10
             },
           },
         ]}
       >
         {children}
       </Glider>
+    </div>
     </div>
   );
 };

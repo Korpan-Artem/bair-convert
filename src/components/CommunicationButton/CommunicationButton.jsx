@@ -4,12 +4,17 @@ import "./styles.css"
 import call from "../../images/call.svg"
 import ReactModal from "react-modal";
 import close from "../../images/close.svg";
-
+import { Formik } from "formik"
+import validationSchemaServiceForm from "./schema"
 
 
 
 const CommunicationButton = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+  const onFormSubmit = () => {
+    console.log("Send")
+  }
 
   const onModalOpen = () => {
     document.body.style.overflow = "hidden";
@@ -49,12 +54,34 @@ const CommunicationButton = () => {
           <h2 className="popup__title title">Купити</h2>
           <h2 className="popup__subtitle">Залиште свій номер телефону,
             і ми допоможемо оформити Ваше замовлення</h2>
-          <form className={"modal_input"}>
-            <input placeholder={"Iм'я"}  className={"modal_input_name"}/>
-            <input placeholder={"Телефон"}  className={"modal_input_phone"}/>
-            <input  value={"Надicлати"} className={"modal_input_button"} type={"submit"}/>
+          <Formik
+            initialValues={{
+            }}
+            validationSchema={validationSchemaServiceForm}
+            onSubmit={onFormSubmit}
+          >
+            {props => (
+          <form className={"modal_input"} onSubmit={props.handleSubmit}>
+            <input
+              placeholder={"Iм'я"}
+              className={"modal_input_name"}
+              name="name"
+              onChange={props.handleChange}
+              onBlur={props.handleBlur}
+            />
+            <input
+              placeholder={"Телефон"}
+              className={"modal_input_phone"}
+              name="phone"
+              onChange={props.handleChange}
+              onBlur={props.handleBlur}
+            />
+
+                <input  value={"Надicлати"} className={` ${!props.errors.phone && !props.errors.name ? "modal_input_button" : " modal_input_button opacity-button"}`} type={"submit"}/>
 
           </form>
+            )}
+          </Formik>
         </div>
       </ReactModal>
     </>

@@ -1,7 +1,18 @@
 import * as React from "react"
-import ProductPage1 from "../modules/ProductPage1";
+import ProductPage1 from "../modules/ProductPage";
+import { graphql, useStaticQuery } from "gatsby"
 
-
+export const query = graphql`
+  query Products {
+      allStrapiProducts {
+          nodes {
+              title
+              description
+              price
+          }
+      }
+  }
+`
 
 const Item1 = () => {
   return (

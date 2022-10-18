@@ -2,8 +2,46 @@ import  React, {useState,useEffect} from "react"
 import "../../styles/style.css"
 import ReactModal from "react-modal";
 import close from "../../images/close.svg";
+import CSSTransitionGroup from "react-transition-group";
 
-const BlockBuy = () => {
+const BlockBuy = ({price}) => {
+  const [isView, setIsView] = useState(false)
+  function getCoords(block) {
+    let box = block?.getBoundingClientRect();
+    return {
+      top: box.top + window.pageYOffset,
+    };
+  }
+
+
+  useEffect(() => {
+    const checkScroll = () => {
+
+      const blockSlider = document.getElementById("icon-slider");
+      const blockBuy = document.getElementById("block-buy");
+      const footer = document.getElementById("footer");
+
+      let topOfSlider = getCoords(blockSlider).top;
+      let topOfFooter = getCoords(footer).top;
+
+      let heightOfBlock = blockBuy?.offsetHeight;
+      let bottomOfSlider = topOfSlider + blockSlider?.offsetHeight + heightOfBlock ;
+      let bottomOfScreen = window?.scrollY + window?.innerHeight;
+
+      if(bottomOfScreen > bottomOfSlider && (bottomOfScreen < topOfFooter)) {
+        setIsView(true);
+      } else if(bottomOfScreen < bottomOfSlider || (bottomOfScreen > topOfFooter)) {
+          setIsView(false);
+      }
+
+    }
+    document.addEventListener('scroll', checkScroll,false);
+
+    return () => {
+        document.removeEventListener("scroll", checkScroll, false);
+    };
+  }, []);
+
   const [isOpen, setIsOpen] = useState(false)
 
   const onModalOpen = () => {
@@ -23,9 +61,9 @@ const BlockBuy = () => {
   }, [])
   return (
     <>
-    <div className={"block-buy-box"}>
+    <div className={`block-buy-box ${isView ? "is-view-block-buy active" : "is-view-block-buy"}`} id={"block-buy"}>
       <div className={"block-buy-price"}>
-        2999 грн
+        {price}
       </div>
       <div className={"block-buy-button"} onClick={() => onModalOpen()}>
         Купити

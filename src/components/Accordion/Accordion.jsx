@@ -24,7 +24,7 @@ const Accordion = () => {
         <div
           className="accordion-content"
           style={{
-            height: open ? accordionContentRef?.current?.offsetHeight + 30 : 0,
+            height: open ? accordionContentRef?.current?.offsetHeight + 35 : 0,
           }}
         >
           <div className="content-box" ref={accordionContentRef}>

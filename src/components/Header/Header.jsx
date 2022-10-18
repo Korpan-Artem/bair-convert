@@ -1,8 +1,46 @@
 import React, { useEffect, useRef, useState } from "react"
 import "../../styles/style.css"
-import logo_black from "../../images/logo-black.svg"
+import logo_convert from "../../images/logo-convert.svg"
+import {graphql, useStaticQuery} from "gatsby";
+
+
+export const query = graphql`
+    query Header{
+        allStrapiAccessories {
+            nodes {
+                title
+                price
+                url
+               
+                mainImage {
+                    localFile {
+                        url
+                    }
+                }
+            }
+        }
+        allStrapiProducts {
+            nodes {
+                title
+                price
+                url
+
+                mainImage {
+                    localFile {
+                        url
+                    }
+                }
+            }
+        }
+    }
+`
 
 const Header = () => {
+  const {
+    allStrapiAccessories ,
+    allStrapiProducts
+  } = useStaticQuery(query)
+
   const dropDownRef = useRef()
 
   const [menuOpen, setMenuOpen] = useState(false)
@@ -31,56 +69,43 @@ const Header = () => {
       <a href="/">
           <img
             className="header__logo"
-            src={logo_black}
+            src={logo_convert}
             alt="A Gatsby astronaut"
           />
       </a>
-      <div className="sub-logo">зимовi конверти</div>
       <nav className="header__menu">
 
         <ul className={`header__nav-list ${menuOpen ? "active" : ""}`}>
           <h3 className={"promo-banner-text"}>Конверти</h3>
-            <li className="header__nav-item">
-              <a
-                className={
-                    "header__nav-link"
-                }
-                href="#"
-              >
-                Alaska Thermo
-              </a>
-            </li>
-            <li className="header__nav-item">
-              <a
-                className={
-                  "header__nav-link"
-                }
-                href="#"
-              >
-                Canada
-              </a>
-            </li>
+            {
+              allStrapiProducts.nodes.map((item,index) => (
+                <li className="header__nav-item">
+                  <a
+                    className={
+                      "header__nav-link"
+                    }
+                    href={item.url}
+                    key={index}
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            }
           <h3 className={"promo-banner-text"}>Рукавички</h3>
-            <li className="header__nav-item">
-              <a
-                className={
-                "header__nav-link"
-                }
-                href="#"
-              >
-               Nortmuf
-              </a>
-            </li>
+          {allStrapiAccessories.nodes.map((item,index) => (
             <li className="header__nav-item">
               <a
                 className={
                   "header__nav-link"
                 }
-                href="#"
+                href={item.url}
+                key={index}
               >
-                Thermo Mittens
+                {item.title}
               </a>
             </li>
+          ))}
             <div className={"menu-margin"}>
               <li className="header__nav-item">
                 <a

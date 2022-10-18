@@ -1,13 +1,13 @@
 import React from "react"
 import "../../styles/style.css"
 
-const BlockTitle = ({title, article, color}) => {
+const BlockTitle = ({title, article, colorTitle}) => {
   return (
     <div className={"block-title-box wrapper"}>
       <h2 className={"big-title"}>{title}</h2>
       <div>
-        <div className={"article"}>{article}</div>
-        <div className={"color-item"}>{color}</div>
+        <div className={"article"}>Артикул: {article}</div>
+        <div className={"color-item"}>{colorTitle}</div>
       </div>
     </div>
 

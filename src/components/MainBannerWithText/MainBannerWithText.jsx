@@ -4,7 +4,7 @@ import two_banner from "../../images/two-banner.png"
 
 const MainBannerWithText = () => {
   return (
-    <div className={"main_banner-box"}>
+    <div className={"banner-box-2"}>
       <div className={"main_banner_text"}>
         <p className={"main-title"}>Можно використовувати
           у глибокій люльці,
