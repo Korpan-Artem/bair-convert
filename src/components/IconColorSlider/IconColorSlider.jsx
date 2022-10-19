@@ -4,20 +4,16 @@ import SliderCharacteristics from "../SliderCharacteristics/SliderCharacteristic
 import BlockTitle from "../BlockTitle/BlockTitle";
 
 const IconColorSlider = ({data,title}) => {
-  const [colorSelect,setColorSelect] = useState(data[Math.ceil(data.length / 2)])
-
-
   const [colorArticle, setColorArticle] = useState("")
   const [colorTitle, setColorTitle] = useState("")
   const [sliderImage, setSliderImage] = useState([])
 
-
   const changeSlider = (item) => {
-    console.log(item)
     setColorArticle(item?.article)
     setColorTitle(item?.color)
     setSliderImage(item?.characteristicsSlider)
     console.log(colorArticle,colorTitle,sliderImage);
+
   }
 
 
@@ -26,6 +22,7 @@ const IconColorSlider = ({data,title}) => {
   }, []);
 
 
+  
   return (
     <>
       <BlockTitle
@@ -39,7 +36,7 @@ const IconColorSlider = ({data,title}) => {
           {data.map((item,index) => (
             <div
               key={index}
-              className={`icon-item ${colorSelect === index ? "icon-select-item" : ""}`}
+              className={`icon-item ${colorTitle === item.color ? "icon-select-item" : ""}`}
               style={{minWidth: "63px"}}
               onClick={() => {changeSlider(item)}}
             >

@@ -8,7 +8,7 @@ import { useId } from "@reach/auto-id";
 const SliderProduct = ({ children }) => {
   const [slide,setSlide] = useState(1);
   const id = useId();
-
+  console.log("children",children.props.children.length);
   const onSlide = (direction,slide) => {
     if (direction && (slide < id)) {
       setSlide(slide + 1)
@@ -18,7 +18,6 @@ const SliderProduct = ({ children }) => {
     }
 
   }
-  console.log("children",children)
   return (
     <div className={"slider-product"}>
       <div className={"relative"}>
@@ -40,7 +39,7 @@ const SliderProduct = ({ children }) => {
       >
         «
       </button>
-
+      {/*<div className={"number-slide"}>{`${slide}/${length}`}</div>*/}
       <Glider
         hasArrows
         slidesToShow={1}

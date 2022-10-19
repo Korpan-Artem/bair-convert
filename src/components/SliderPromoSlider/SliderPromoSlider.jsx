@@ -1,7 +1,10 @@
 import React from "react"
 import StrollersStandardSlider from "../StrollersStandardSlider/StrollersStandardSlider"
 import item1 from "../../images/promo.png"
-import item2 from "../../images/promoBottom.png"
+import item2 from "../../images/promo.png"
+import VideoContainer from "../VideoContainer/VideoContainer"
+import bg from "../../images/accessories3.png"
+import video from ".././../images/video1.mp4"
 
 const SliderPromoSlider = ({ data }) => {
   return (
@@ -11,18 +14,15 @@ const SliderPromoSlider = ({ data }) => {
           промо-фото</h2>
         <StrollersStandardSlider>
               <div className="three-itempage__max-item three-itempage__max-item-wrapper">
-                <img
-                  src={item1}
-                  className="main_banner_image-promo"
-                  alt={""}
+                <VideoContainer
+                  poster={<img src={bg} />}
+                  videoURL={video}
                 />
-
               </div>
           <div className="three-itempage__max-item three-itempage__max-item-wrapper">
-            <img
-              src={item2}
-              className="main_banner_image-promo"
-              alt={""}
+            <VideoContainer
+              poster={<img src={bg} />}
+              videoURL={video}
             />
           </div>
 

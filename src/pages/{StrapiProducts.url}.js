@@ -1,9 +1,9 @@
 import React from "react"
 import ProductPage from "../modules/ProductPage"
-
 import { graphql } from "gatsby"
 
 const StrapiProductUrl = ({ data }) => {
+
   return (
     <ProductPage
       data={data.strapiProducts}
@@ -39,6 +39,7 @@ export const query = graphql`
     }
     allStrapiProducts {
         nodes {
+            id
             title
             price
             url
@@ -51,6 +52,7 @@ export const query = graphql`
     }
       allStrapiAccessories {
           nodes {
+              id
               title
               price
               url

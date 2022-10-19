@@ -8,8 +8,8 @@ const StrapiProductUrl = ({ data }) => {
   return (
     <AccessoriesPage
       data={data.strapiAccessories}
-      relatedAccessories={data.allStrapiAccessories}
-      also={data.allStrapiProducts}
+      relatedProducts={data.allStrapiProducts}
+      also={data.allStrapiAccessories}
     />
   )
 }

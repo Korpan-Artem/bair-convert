@@ -5,10 +5,10 @@ import item2 from "../../images/item2.png"
 import item3 from "../../images/item3.png"
 import item4 from "../../images/item4.png"
 
-const RelatedProducts = ({data}) => {
+const RelatedProducts = ({data, title}) => {
   return (
     <div className={"main_catalog-box wrapper"}>
-      <h2 className={"main-title"}>Інші моделі</h2>
+      <h2 className={"main-title"}>{title}</h2>
       <div className={"main_catalog-box-items"}>
         {data.map((item,index) => (
           <a key={index} href={item.url} className={"main_catalog-box-item"}>

@@ -8,10 +8,12 @@ import RelatedProducts from "../../components/RelatedProducts/RelatedProducts";
 import BlockTitle from "../../components/BlockTitle/BlockTitle";
 import SliderCharacteristics from "../../components/SliderCharacteristics/SliderCharacteristics";
 import IconColorSlider from "../../components/IconColorSlider/IconColorSlider";
+import {useLocation} from "@reach/router";
+import relatedProductsHook from "../ProductPage/hooks";
 
 
 
-const ProductPage = ({
+const AccessoriesPage = ({
        data: {
            url,
            title,
@@ -20,31 +22,28 @@ const ProductPage = ({
            colorSlider,
            characteristicsSlider
        },
-       relatedAccessories: {
+       relatedProducts: {
          nodes
        },
        also
    }) => {
+  const location = useLocation();
+  const relatedProducts = relatedProductsHook(nodes, location);
+  const relatedAccessories = relatedProductsHook(also.nodes, location)
     return (
       <div className={"wrapper-mobile"}>
           <Header/>
-          <BlockTitle
-            title={title}
-            colorSlider={colorSlider}
-            url={url}
-          />
-          {/*<SliderCharacteristics data={colorSlider}/>*/}
-          <IconColorSlider data={colorSlider}/>
+          <IconColorSlider data={colorSlider} title={title}/>
           <Characteristics
             desription={description}
           />
-          <Accessories data={also}/>
-          <RelatedProducts url={url} data={nodes}/>
+          <Accessories data={relatedAccessories} title={"Iншi моделi"}/>
+          <RelatedProducts data={relatedProducts} title={"Пропонуємо разом з конвертом"}/>
           <BlockBuy price={price}/>
           <Footer/>
       </div>
     )
 }
 
-export default ProductPage
+export default AccessoriesPage
 

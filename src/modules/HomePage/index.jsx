@@ -49,7 +49,9 @@ export const query = graphql`
 const HomePage = () => {
     const {
         allStrapiProducts,
-        allStrapiAccessories
+        allStrapiAccessories: {
+            nodes
+        }
     } = useStaticQuery(query)
   return (
     <div className={"wrapper-mobile"}>
@@ -62,7 +64,7 @@ const HomePage = () => {
       <PromoTextBottom/>
       <PromoWithIcon/>
       <PromoTh/>
-      <Accessories data={allStrapiAccessories}/>
+      <Accessories data={nodes} title={"Пропонуємо разом з конвертом"}/>
       <SliderPromoSlider/>
       <SliderInstagram/>
       <Accordion/>
