@@ -8,7 +8,7 @@ const Accessories = ({data, title}) => {
         <h2 className={"main-title"}>{title}</h2>
         <div className={"accessories-block-box"}>
           {!!data && data.map((item,index) => (
-            <a href={item.url} key={index} className={"accessories-block-box-item"}>
+            <a href={`/${item.url}/`} key={index} className={"accessories-block-box-item"}>
               <div className={"accessories-block-box-item-image"}>
                 <img src={item.mainImage.localFile.url} alt={""} className={"image-width-accessories"}/>
               </div>

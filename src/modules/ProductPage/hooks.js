@@ -6,7 +6,11 @@ const relatedProductsHook = (nodes,location) => {
   let arrPagesIdLarger = [];
   let arrPagesIdLess = [];
   const pages = nodes.filter((item) => {
-    if(`/${item?.url}` !== `/${location?.pathname}` && `/${item?.url}` !== location?.pathname) {
+    console.log(`/${item?.url}/`, `${location?.pathname}`,`/${item?.url}/`,`${location?.pathname}`)
+    console.log(`/${item?.url}/`, `${location?.pathname}`,`/${item?.url}/`,`${location?.pathname}/`)
+    if(`/${item?.url}/` !== `${location?.pathname}/` && `/${item?.url}/` !== `${location?.pathname}` &&
+      `/${item?.url}/` !== `${location?.pathname}/` && `/${item?.url}/` !== `${location?.pathname}/`
+    ) {
       item.id = parseInt(item?.id);
       return item
     }else {

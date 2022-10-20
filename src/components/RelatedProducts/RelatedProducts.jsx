@@ -11,9 +11,9 @@ const RelatedProducts = ({data, title}) => {
       <h2 className={"main-title"}>{title}</h2>
       <div className={"main_catalog-box-items"}>
         {data.map((item,index) => (
-          <a key={index} href={item.url} className={"main_catalog-box-item"}>
+          <a key={index} href={`/${item.url}/`} className={"main_catalog-box-item"}>
             <div className={"main_catalog-box-item-image"}>
-              <img src={item1} alt={""} className={"image-width"}/>
+              <img src={item.mainImage.localFile.url} alt={""} className={"image-width"}/>
             </div>
             <div className={"main_catalog-box-item-text"}>
               <h3 className={"main_catalog-box-item-title"}>{item.title}</h3>

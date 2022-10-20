@@ -27,6 +27,7 @@
     "gatsby-plugin-react-helmet": "^5.17.0",
     "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-plugin-sitemap": "^5.21.0",
+    "gatsby-plugin-use-query-params": "^1.0.1",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-source-strapi": "^1.0.3",
     "gatsby-transformer-sharp": "^4.4.0",
@@ -50,6 +51,7 @@
     "react-transition-group": "^4.4.5",
     "styled-components": "^5.3.5",
     "threesixty": "^0.3.0",
+    "use-query-params": "^2.1.1",
     "util": "^0.12.4",
     "yup": "^0.32.11"
   },

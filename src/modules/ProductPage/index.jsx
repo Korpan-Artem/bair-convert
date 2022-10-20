@@ -8,6 +8,7 @@ import RelatedProducts from "../../components/RelatedProducts/RelatedProducts";
 import IconColorSlider from "../../components/IconColorSlider/IconColorSlider";
 import {useLocation} from "@reach/router";
 import relatedProductsHook from "./hooks";
+import { BrowserRouter as Router } from "react-router-dom";
 
 
 const ProductPage = ({
@@ -27,6 +28,7 @@ const ProductPage = ({
   const relatedAccessories = relatedProductsHook(also.nodes, location)
 
   return (
+    <Router>
     <div className={"wrapper-mobile"}>
       <Header/>
       <IconColorSlider data={colorSlider} title={title}/>
@@ -38,6 +40,7 @@ const ProductPage = ({
       <BlockBuy price={price}/>
       <Footer/>
     </div>
+    </Router>
   )
 }
 

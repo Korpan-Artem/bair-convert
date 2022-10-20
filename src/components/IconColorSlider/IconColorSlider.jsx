@@ -2,24 +2,35 @@ import React, {useState,useEffect} from "react"
 import SmallSlider from "../SmallSlider/SmallSlider";
 import SliderCharacteristics from "../SliderCharacteristics/SliderCharacteristics";
 import BlockTitle from "../BlockTitle/BlockTitle";
+import { createSearchParams, useSearchParams } from "react-router-dom";
+
 
 const IconColorSlider = ({data,title}) => {
-  console.log("data",data);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const favoriteFruit = searchParams.get("article");
   const [colorArticle, setColorArticle] = useState("")
   const [colorTitle, setColorTitle] = useState("")
   const [sliderImage, setSliderImage] = useState([])
+
 
   const changeSlider = (item) => {
     setColorArticle(item?.article)
     setColorTitle(item?.color)
     setSliderImage(item?.characteristicsSlider)
-    console.log(colorArticle,colorTitle,sliderImage);
-
+    setSearchParams(
+      createSearchParams(item?.article)
+    );
   }
 
 
   useEffect(() => {
-    changeSlider(!!data && data[Math.ceil(data.length / 2)]);
+    if(data.length !== 1) {
+      !!data && changeSlider(!!data && data[Math.floor(data.length / 2)]);
+    } else {
+      !!data && changeSlider(!!data && data[0]);
+    }
+
   }, []);
 
 
@@ -31,7 +42,7 @@ const IconColorSlider = ({data,title}) => {
         article={colorArticle}
         colorTitle={colorTitle}
       />
-      <SliderCharacteristics data={sliderImage}/>
+      {!!sliderImage && <SliderCharacteristics data={sliderImage}/>}
       <div className={"icons-box"} id={"icon-slider"}>
         <SmallSlider>
           {data.map((item,index) => (

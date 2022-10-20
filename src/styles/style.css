@@ -5623,6 +5623,20 @@ a:after {
     font-size: 24px;
   }
 
+  .overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.5s;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  }
+
   .header__nav-link {
     font-size: 18px;
     border-bottom: 1px solid #000;
@@ -7619,6 +7633,7 @@ a:after {
 
   .three-itempage__max-item {
     max-height: 457px;
+    min-height: 400px;
   }
 
   .icon-image {
@@ -7788,7 +7803,8 @@ a:after {
   }
 
   .three-itempage__max-item {
-    max-height: 489px;
+    max-height: 460px;
+    min-height: 456px;
   }
 
   .main_banner_video-promo {
@@ -7964,6 +7980,7 @@ a:after {
 
   .three-itempage__max-item {
     max-height: 457px;
+    min-height: 450px;
   }
 
   .main_banner_video-promo {

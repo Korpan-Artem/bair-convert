@@ -5,12 +5,9 @@ import BlockBuy from "../../components/BlockBuy/BlockBuy";
 import Characteristics from "../../components/Characteristics/Characteristics";
 import Accessories from "../../components/Accessories/Accessories";
 import RelatedProducts from "../../components/RelatedProducts/RelatedProducts";
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import SliderCharacteristics from "../../components/SliderCharacteristics/SliderCharacteristics";
 import IconColorSlider from "../../components/IconColorSlider/IconColorSlider";
 import {useLocation} from "@reach/router";
 import relatedProductsHook from "../ProductPage/hooks";
-
 
 
 const AccessoriesPage = ({

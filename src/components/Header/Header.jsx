@@ -74,7 +74,11 @@ const Header = () => {
           />
       </a>
       <nav className="header__menu">
-
+        {
+          menuOpen ? (
+            <div className={"overlay"}></div>
+          ) : ""
+        }
         <ul className={`header__nav-list ${menuOpen ? "active" : ""}`}>
           <h3 className={"promo-banner-text"}>Конверти</h3>
             {
@@ -84,7 +88,7 @@ const Header = () => {
                     className={
                       "header__nav-link"
                     }
-                    href={item.url}
+                    href={`/${item.url}/`}
                     key={index}
                   >
                     {item.title}
@@ -99,7 +103,7 @@ const Header = () => {
                 className={
                   "header__nav-link"
                 }
-                href={item.url}
+                href={`/${item.url}/`}
                 key={index}
               >
                 {item.title}

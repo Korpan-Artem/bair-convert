@@ -25,7 +25,7 @@ const BlockBuy = ({price}) => {
       let topOfFooter = getCoords(footer).top;
 
       let heightOfBlock = blockBuy?.offsetHeight;
-      let bottomOfSlider = topOfSlider + blockSlider?.offsetHeight + heightOfBlock ;
+      let bottomOfSlider = topOfSlider + blockSlider?.offsetHeight + heightOfBlock + 15 ;
       let bottomOfScreen = window?.scrollY + window?.innerHeight;
 
       if(bottomOfScreen > bottomOfSlider && (bottomOfScreen < topOfFooter)) {

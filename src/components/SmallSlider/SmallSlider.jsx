@@ -8,6 +8,7 @@ const SmallSlider = ({ children }) => {
   return (
     <div className={"relative"}>
       <Glider
+        scrollToSlide={2}
         responsive={[
           {
             breakpoint: 600,
