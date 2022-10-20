@@ -2,13 +2,13 @@ import React, {useState,useEffect} from "react"
 import SmallSlider from "../SmallSlider/SmallSlider";
 import SliderCharacteristics from "../SliderCharacteristics/SliderCharacteristics";
 import BlockTitle from "../BlockTitle/BlockTitle";
-import { createSearchParams, useSearchParams } from "react-router-dom";
+// import { createSearchParams, useSearchParams } from "react-router-dom";
 
 
 const IconColorSlider = ({data,title}) => {
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const favoriteFruit = searchParams.get("article");
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const favoriteFruit = searchParams.get("article");
   const [colorArticle, setColorArticle] = useState("")
   const [colorTitle, setColorTitle] = useState("")
   const [sliderImage, setSliderImage] = useState([])
@@ -18,9 +18,9 @@ const IconColorSlider = ({data,title}) => {
     setColorArticle(item?.article)
     setColorTitle(item?.color)
     setSliderImage(item?.characteristicsSlider)
-    setSearchParams(
-      createSearchParams(item?.article)
-    );
+    // setSearchParams(
+    //   createSearchParams(item?.article)
+    // );
   }
 
 

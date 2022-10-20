@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL:"https://bair-convert-strapi.herokuapp.com",
+        apiURL:"https://bair-convert-strapi.herokuapp.com" || "http://localhost:1337",
         queryLimit: 1000,
         collectionTypes: [
           "products",
@@ -19,5 +19,8 @@ module.exports = {
     },
     "gatsby-plugin-use-query-params",
   ],
+  flags: {
+    DEV_SSR: true
+  },
 }
 
