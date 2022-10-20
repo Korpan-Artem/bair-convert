@@ -4,6 +4,7 @@ import SliderCharacteristics from "../SliderCharacteristics/SliderCharacteristic
 import BlockTitle from "../BlockTitle/BlockTitle";
 
 const IconColorSlider = ({data,title}) => {
+  console.log("data",data);
   const [colorArticle, setColorArticle] = useState("")
   const [colorTitle, setColorTitle] = useState("")
   const [sliderImage, setSliderImage] = useState([])

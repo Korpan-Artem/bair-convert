@@ -15,12 +15,10 @@ import relatedProductsHook from "../ProductPage/hooks";
 
 const AccessoriesPage = ({
        data: {
-           url,
-           title,
-           price,
-           description,
-           colorSlider,
-           characteristicsSlider
+         title,
+         price,
+         description,
+         colorSlider,
        },
        relatedProducts: {
          nodes
@@ -38,7 +36,7 @@ const AccessoriesPage = ({
             desription={description}
           />
           <Accessories data={relatedAccessories} title={"Iншi моделi"}/>
-          <RelatedProducts data={relatedProducts} title={"Пропонуємо разом з конвертом"}/>
+          <RelatedProducts data={relatedProducts} title={"Пропонуємо разом з рукавичками"}/>
           <BlockBuy price={price}/>
           <Footer/>
       </div>

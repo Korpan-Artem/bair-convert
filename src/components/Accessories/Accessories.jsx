@@ -14,7 +14,7 @@ const Accessories = ({data, title}) => {
               </div>
               <div className={"main_catalog-box-item-text"}>
                 <h3 className={"main_catalog-box-item-title"}>{item.title}</h3>
-                <h3 className={"main_catalog-box-item-price"}>{item.price}</h3>
+                <h3 className={"main_catalog-box-item-price"}>{item.price} грн</h3>
               </div>
             </a>
           ))}

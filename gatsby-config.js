@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "http://127.0.0.1:1337",
+        apiURL:"https://sleepy-wildwood-40796.herokuapp.com" || "http://127.0.0.1:1337",
         queryLimit: 1000,
         collectionTypes: [
           "products",

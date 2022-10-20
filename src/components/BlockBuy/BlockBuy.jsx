@@ -63,7 +63,7 @@ const BlockBuy = ({price}) => {
     <>
     <div className={`block-buy-box ${isView ? "is-view-block-buy active" : "is-view-block-buy"}`} id={"block-buy"}>
       <div className={"block-buy-price"}>
-        {price}
+        {price} грн
       </div>
       <div className={"block-buy-button"} onClick={() => onModalOpen()}>
         Купити

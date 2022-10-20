@@ -2,6 +2,7 @@ import React from "react"
 import "../../styles/style.css"
 
 const BlockTitle = ({title, article, colorTitle}) => {
+  console.log(title, article, colorTitle)
   return (
     <div className={"block-title-box wrapper"}>
       <h2 className={"big-title"}>{title}</h2>

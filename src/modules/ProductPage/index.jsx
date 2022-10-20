@@ -12,7 +12,6 @@ import relatedProductsHook from "./hooks";
 
 const ProductPage = ({
   data: {
-    url,
     title,
     price,
     description,
@@ -30,8 +29,6 @@ const ProductPage = ({
   return (
     <div className={"wrapper-mobile"}>
       <Header/>
-
-
       <IconColorSlider data={colorSlider} title={title}/>
       <Characteristics
         desription={description}
