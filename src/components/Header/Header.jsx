@@ -117,6 +117,7 @@ const Header = () => {
                     "header__nav-link"
                   }
                   href="/#reviews"
+                  onClick={openMenu}
                 >
                   Вiдгуки
                 </a>
@@ -127,6 +128,7 @@ const Header = () => {
                     "header__nav-link"
                   }
                   href="/#faq"
+                  onClick={openMenu}
                 >
                   FAQ
                 </a>
@@ -137,6 +139,7 @@ const Header = () => {
                     "header__nav-link"
                   }
                   href="/#delivery"
+                  onClick={openMenu}
                 >
                   Оплата i доставка
                 </a>

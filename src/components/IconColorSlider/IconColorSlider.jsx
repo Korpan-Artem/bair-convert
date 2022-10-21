@@ -2,31 +2,47 @@ import React, {useState,useEffect} from "react"
 import SmallSlider from "../SmallSlider/SmallSlider";
 import SliderCharacteristics from "../SliderCharacteristics/SliderCharacteristics";
 import BlockTitle from "../BlockTitle/BlockTitle";
+import {useLocation} from "@reach/router";
+import { navigate } from "gatsby";
+
+
+import { Swiper,SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
 
 
 
 const IconColorSlider = ({data,title}) => {
 
+
   const [colorArticle, setColorArticle] = useState("")
   const [colorTitle, setColorTitle] = useState("")
   const [sliderImage, setSliderImage] = useState([])
+  const location = useLocation()
+
+  const middle = Math.floor(data.length / 2);
+  console.log("middle",middle);
 
   const changeSlider = (item) => {
-    setColorArticle(item?.article)
-    setColorTitle(item?.color)
-    setSliderImage(item?.characteristicsSlider)
+    navigate(`?article=${item.article}`)
+    setColorArticle(!!item?.article && item?.article)
+    setColorTitle(!!item?.color && item?.color)
+    setSliderImage(!!item?.characteristicsSlider && item?.characteristicsSlider)
+    console.log("location2222",location);
   }
 
 
   useEffect(() => {
     if(data.length !== 1) {
-      !!data && changeSlider(!!data && data[Math.floor(data.length / 2)]);
+      !!data && changeSlider(!!data && data[middle]);
     } else {
       !!data && changeSlider(!!data && data[0]);
     }
-
-
   }, []);
+
 
 
   
@@ -39,10 +55,17 @@ const IconColorSlider = ({data,title}) => {
       />
       {!!sliderImage && <SliderCharacteristics data={sliderImage}/>}
       <div className={"icons-box"} id={"icon-slider"}>
-        <SmallSlider>
+        <Swiper
+          slidesPerView={5.5}
+          spaceBetween={3}
+          centeredSlides={true}
+          initialSlide={middle}
+
+          className="mySwiper"
+        >
           {data.map((item,index) => (
+            <SwiperSlide  key={index}>
             <div
-              key={index}
               className={`icon-item ${colorTitle === item.color ? "icon-select-item" : ""}`}
               style={{minWidth: "63px"}}
               onClick={() => {changeSlider(item)}}
@@ -54,8 +77,9 @@ const IconColorSlider = ({data,title}) => {
                 {item.color}
               </div>
             </div>
+            </SwiperSlide>
           ))}
-        </SmallSlider>
+        </Swiper>
       </div>
     </>
   )

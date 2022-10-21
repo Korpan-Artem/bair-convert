@@ -8,7 +8,6 @@ import RelatedProducts from "../../components/RelatedProducts/RelatedProducts";
 import IconColorSlider from "../../components/IconColorSlider/IconColorSlider";
 import {useLocation} from "@reach/router";
 import relatedProductsHook from "./hooks";
-// import { BrowserRouter as Router } from "react-router-dom";
 
 
 const ProductPage = ({
@@ -31,7 +30,7 @@ const ProductPage = ({
 
     <div className={"wrapper-mobile"}>
       <Header/>
-      <IconColorSlider data={colorSlider} title={title}/>
+      {!!colorSlider && <IconColorSlider data={colorSlider} title={title}/>}
       <Characteristics
         desription={description}
       />
