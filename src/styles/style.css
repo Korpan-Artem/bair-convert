@@ -1344,12 +1344,7 @@ li.slick-active button::after {
   background: #b9b6b2;
 }
 
-.ReactModal__Content {
-  width: 94%;
-  margin: 3% 0 20px 3%;
-  padding: 0;
-  bottom:0;
-}
+
 
 .popup__fade {
   background: rgba(0, 0, 0, 0.5);
@@ -2618,7 +2613,7 @@ a:after {
 }
 
 .two-storelist__item {
-  padding: 25px 20px 25px 20px;
+  padding: 15px 10px;
   transition: 0.4s;
   overflow: hidden;
 }
@@ -5603,25 +5598,7 @@ a:after {
 
   }
 
-  .header__nav-list {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 100%;
-    padding: 1rem;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background: #fff;
-    -webkit-transform: translateX(80vw);
-    transform: translateX(80vw);
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    z-index: 10;
-    font-size: 24px;
-  }
+
 
   .overlay {
     position: fixed; /* Sit on top of the page content */
@@ -6111,7 +6088,7 @@ a:after {
   .icon-select-item {
     border: 1px solid #C1C5DA;
     background: rgba(193, 197, 218, 0.3);
-
+    color: #000;
   }
 
   .icon-image {
@@ -6120,7 +6097,7 @@ a:after {
     border-radius:50%;
     display: flex;
     padding: 2px;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
   }
 
@@ -7531,7 +7508,13 @@ a:after {
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   }
 
-
+  .ReactModal__Content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    margin: 30% 0 20px 35%;
+  }
 
   .big-title {
     font-size: 27px;
@@ -7561,6 +7544,7 @@ a:after {
 
   .glider-slide {
     min-width: 0;
+    padding: 3px;
   }
 
   .three-itempage__max-item {
@@ -7717,6 +7701,26 @@ a:after {
     right: 0;
   }
 
+  .header__nav-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    padding: 1rem;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #fff;
+    -webkit-transform: translateX(80vw);
+    transform: translateX(80vw);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 10;
+    font-size: 24px;
+  }
+
   .big-title {
     font-size: 27px;
     font-weight: 500;
@@ -7745,6 +7749,7 @@ a:after {
 
   .glider-slide {
     min-width: 0;
+    padding: 3px;
   }
 
   .three-itempage__max-item {
@@ -7878,6 +7883,13 @@ a:after {
 
   .popup__content {
     padding-top: 0;
+  }
+
+  .ReactModal__Content {
+    width: 94%;
+    margin: 3% 0 20px 3%;
+    padding: 0;
+    bottom:0;
   }
   /*.....................*/
 }

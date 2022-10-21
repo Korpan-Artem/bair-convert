@@ -2,6 +2,10 @@ import React, {useState,useEffect} from "react"
 import SmallSlider from "../SmallSlider/SmallSlider";
 import SliderCharacteristics from "../SliderCharacteristics/SliderCharacteristics";
 import BlockTitle from "../BlockTitle/BlockTitle";
+import {useLocation} from "@reach/router";
+import { navigate } from "gatsby";
+
+
 
 
 
@@ -10,11 +14,15 @@ const IconColorSlider = ({data,title}) => {
   const [colorArticle, setColorArticle] = useState("")
   const [colorTitle, setColorTitle] = useState("")
   const [sliderImage, setSliderImage] = useState([])
+  const location = useLocation()
+  console.log("location",location);
 
   const changeSlider = (item) => {
-    setColorArticle(item?.article)
-    setColorTitle(item?.color)
-    setSliderImage(item?.characteristicsSlider)
+    navigate(`?article=${item.article}`)
+    setColorArticle(!!item?.article && item?.article)
+    setColorTitle(!!item?.color && item?.color)
+    // setSliderImage(!!item?.characteristicsSlider && item?.characteristicsSlider)
+    console.log("location2222",location);
   }
 
 
@@ -24,9 +32,8 @@ const IconColorSlider = ({data,title}) => {
     } else {
       !!data && changeSlider(!!data && data[0]);
     }
-
-
   }, []);
+
 
 
   
@@ -37,9 +44,9 @@ const IconColorSlider = ({data,title}) => {
         article={colorArticle}
         colorTitle={colorTitle}
       />
-      {!!sliderImage && <SliderCharacteristics data={sliderImage}/>}
+      {/*{!!sliderImage && <SliderCharacteristics data={sliderImage}/>}*/}
       <div className={"icons-box"} id={"icon-slider"}>
-        <SmallSlider>
+        {!!data && <SmallSlider>
           {data.map((item,index) => (
             <div
               key={index}
@@ -55,7 +62,7 @@ const IconColorSlider = ({data,title}) => {
               </div>
             </div>
           ))}
-        </SmallSlider>
+        </SmallSlider> }
       </div>
     </>
   )

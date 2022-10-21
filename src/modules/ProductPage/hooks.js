@@ -1,13 +1,9 @@
 
 const relatedProductsHook = (nodes,location) => {
-  console.log("nodes",nodes);
-  console.log("location",location);
   let selectedProduct = null;
   let arrPagesIdLarger = [];
   let arrPagesIdLess = [];
   const pages = nodes.filter((item) => {
-    console.log(`/${item?.url}/`, `${location?.pathname}`,`/${item?.url}/`,`${location?.pathname}`)
-    console.log(`/${item?.url}/`, `${location?.pathname}`,`/${item?.url}/`,`${location?.pathname}/`)
     if(`/${item?.url}/` !== `${location?.pathname}/` && `/${item?.url}/` !== `${location?.pathname}` &&
       `/${item?.url}/` !== `${location?.pathname}/` && `/${item?.url}/` !== `${location?.pathname}/`
     ) {
@@ -30,7 +26,6 @@ const relatedProductsHook = (nodes,location) => {
     arrPagesIdLarger = arrPagesIdLarger.concat(arrPagesIdLess);
   }
 
-  console.log("arrPagesIdLarger",arrPagesIdLarger);
   return arrPagesIdLarger
 }
 
