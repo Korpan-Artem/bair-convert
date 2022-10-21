@@ -54,3 +54,4 @@ export const useVideoControl = (startFromPause = true) => {
 
   return [videoRef, isPaused, toggleVideoPlay, progress, isViewed]
 }
+

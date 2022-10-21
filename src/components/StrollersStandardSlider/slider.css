@@ -132,6 +132,20 @@ li.slick-active button::after {
   background-size: contain;
 }
 
+@media (max-width: 1920px)   {
+  .glider-next::before,
+  .glider-prev::before {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  .glider-prev::before {
+    transform: translate(0, -31px);
+  }
+}
+
+
 @media (max-width: 767px) and (orientation: portrait) {
   .glider-next::before,
   .glider-prev::before {

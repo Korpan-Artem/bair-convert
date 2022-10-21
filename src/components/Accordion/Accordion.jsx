@@ -1,39 +1,20 @@
 import React, { useRef, useState } from "react"
 import "./styles.css"
+import { data } from "./data"
+import AccordionItem from "./AccordionItem";
 
 const Accordion = () => {
-  const accordionContentRef = useRef(null)
 
-  const [open, setOpen] = useState(false)
-
-  const triggerOpen = () => setOpen(!open)
-
+  console.log("accordion",data);
   return (
     <div className={"accordion-box wrapper"} id={"faq"}>
       <h2 className={"accordion-main-title"}>FAQ</h2>
     <div className={"accordion-border-top"}>
-
-      <div className={`two-storelist__item ${open ? "active" : ""}`}>
-        <div
-          className={`accordion-title ${open ? "active" : ""}`}
-          id="city-1"
-          onClick={triggerOpen}
-        >
-          Чи маєте ви універсальні аксесуари?
-        </div>
-        <div
-          className="accordion-content"
-          style={{
-            height: open ? accordionContentRef?.current?.offsetHeight + 35 : 0,
-          }}
-        >
-          <div className="content-box" ref={accordionContentRef}>
-            Звичайно. Ми докладаємо всіх зусиль, щоб ваше
-            батьківство було комфортним та крутим. Саме тому
-            ми надаємо 1 рік гарантії на всі аксесуари Bair.
-          </div>
-        </div>
-      </div>
+      {
+        data.map((item,index) => (
+          <AccordionItem  key={index} title={item.title} description={item.description}/>
+        ))
+      }
     </div>
     </div>
   )

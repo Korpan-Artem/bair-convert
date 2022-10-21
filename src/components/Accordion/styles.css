@@ -29,24 +29,24 @@
 .accordion-title:before {
     content: "";
     width: 15px;
-    height: 3px;
+    height: 2px;
     background: #000;
     position: absolute;
     top: 0;
-    right: 20px;
+    right: -5px;
     bottom: 0;
     margin: auto;
 }
 
 .accordion-title:after {
     content: "";
-    width: 3px;
+    width: 2px;
     height: 15px;
     background: #000;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 26px;
+    right: 1.5px;
     margin: auto;
     transition: all 0.3s ease;
 }
@@ -67,4 +67,15 @@
 .two-storelist__item.active {
     background: #E9EAEB;
     color: #000;
+}
+
+@media (max-width: 415px) {
+    .accordion-title {
+        font-size: 15px;
+        padding-right: 23px;
+    }
+
+    .content-box {
+        font-size: 13px;
+    }
 }

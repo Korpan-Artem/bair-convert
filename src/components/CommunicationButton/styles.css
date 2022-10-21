@@ -34,6 +34,15 @@
     font-family: Mulish, serif;
 }
 
+@media(max-width: 1920px) {
+    .multibutton {
+        right: calc(50% - 150px);
+        bottom: 50px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
 .multibutton:hover {
     width: auto;
     height: auto;
