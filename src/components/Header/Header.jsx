@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import "../../styles/style.css"
 import logo_convert from "../../images/logo-convert.svg"
 import {graphql, useStaticQuery} from "gatsby";
+import {hideHeader} from "./hooks";
 
 
 export const query = graphql`
@@ -40,6 +41,9 @@ const Header = () => {
     allStrapiAccessories ,
     allStrapiProducts
   } = useStaticQuery(query)
+
+  // hideHeader();
+
 
   const dropDownRef = useRef()
 
