@@ -1300,7 +1300,7 @@ li.slick-active button::after {
 
 .three-itempage__max-item-img,
 .three-itempage__min-item-img {
-  width: 100%;
+  width: 96%;
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;

@@ -7,11 +7,11 @@ import SliderCharacteristicsItem from "./SliderCharacteristicsItem";
 
 
 
+
 const SliderCharacteristics = ({data}) => {
   return (
     <>
-      <div>
-        <SliderCharacteristicsItem data={data} initialSlide={0}/>
+       <SliderCharacteristicsItem data={data} initialSlide={0}/>
       </div>
     </>
   )
