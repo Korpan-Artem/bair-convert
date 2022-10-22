@@ -7,12 +7,10 @@ import SliderCharacteristicsItem from "./SliderCharacteristicsItem";
 
 
 
-
 const SliderCharacteristics = ({data}) => {
   return (
     <>
        <SliderCharacteristicsItem data={data} initialSlide={0}/>
-      </div>
     </>
   )
 }
