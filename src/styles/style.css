@@ -5888,10 +5888,10 @@ a:after {
   }
 
   .mySwiper > .swiper-pagination-fraction {
-    width: 40px;
+    width: 60px;
     right: 20px;
     background: rgba(193, 197, 218, 0.15);
-    left: 88%;
+    left: 82%;
     bottom: 20px;
     color:#736A6A;
   }
