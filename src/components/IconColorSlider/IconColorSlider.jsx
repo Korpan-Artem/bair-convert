@@ -71,7 +71,7 @@ const IconColorSlider = ({data,title}) => {
               onClick={() => {changeSlider(item)}}
             >
               <div className={"icon-image"}>
-                <img src={item.imageColor.localFile.url} alt={""}/>
+                <img src={item.imageColor.localFile.url} alt={""} className={"three-itempage__max-item-img"}/>
               </div>
               <div className={"icon-title"}>
                 {item.color}
