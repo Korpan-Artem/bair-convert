@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import "../../styles/style.css"
 import logo_convert from "../../images/logo-convert.svg"
 import {graphql, useStaticQuery} from "gatsby";
-import {hideHeader} from "./hooks";
+
 
 
 export const query = graphql`
@@ -42,7 +42,11 @@ const Header = () => {
     allStrapiProducts
   } = useStaticQuery(query)
 
-  // hideHeader();
+  // let prevScrollPos = window.pageYOffset;
+
+  // window.addEventListener("scroll", () => {
+  //   // let currentScrollPos = window.pageYOffset;
+  // })
 
 
   const dropDownRef = useRef()
@@ -57,7 +61,26 @@ const Header = () => {
 
     document.addEventListener("click", closeMenu)
 
+    let prevScrollPos = window.pageYOffset;
+
+    const headerBlock = document.getElementById("top");
+    window.addEventListener("scroll", () => {
+        let currentScrollPos = window.pageYOffset;
+
+        if(prevScrollPos < currentScrollPos) {
+          headerBlock.classList.add('hide');
+        } else {
+          headerBlock.classList.remove('hide');
+        }
+
+        prevScrollPos = currentScrollPos;
+    })
+
+
     return () => document.removeEventListener("click", closeMenu)
+
+
+
   }, [menuOpen])
 
   const openMenu = () => {

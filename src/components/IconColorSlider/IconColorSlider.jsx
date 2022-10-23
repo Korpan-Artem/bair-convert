@@ -5,7 +5,6 @@ import {useLocation} from "@reach/router";
 import { navigate } from "gatsby";
 
 import { Swiper,SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -14,15 +13,21 @@ import "swiper/css/pagination";
 
 const IconColorSlider = ({data,title}) => {
 
-
   const middle = Math.floor(data.length / 2);
   const [colorArticle, setColorArticle] = useState("")
   const [colorTitle, setColorTitle] = useState("")
   const [sliderImage, setSliderImage] = useState([])
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation()
 
-
+  let indexActiveItem;
+  const loc = location.search.split("").splice(9).join('');
+  let activeItem = data.filter((item, index) => {
+    console.log(index);
+    if(`${item?.article}` === loc) {
+      return item
+    }
+  })
+  activeItem = activeItem[0];
 
   const changeSlider = (item) => {
     navigate(`?article=${item.article}`)
@@ -33,10 +38,15 @@ const IconColorSlider = ({data,title}) => {
 
 
   useEffect(() => {
+    if(location.search) {
+      return changeSlider(activeItem)
+      // indexActiveItem  = data.findIndex(item => `${item?.article}` === loc)
+      console.log("indexActiveItem",indexActiveItem);
+    }
     if(data.length !== 1) {
-      !!data && changeSlider(!!data && data[middle]);
+      return !!data && changeSlider(!!data && data[middle]);
     } else {
-      !!data && changeSlider(!!data && data[0]);
+      return !!data && changeSlider(!!data && data[0]);
     }
   }, []);
 
@@ -56,9 +66,8 @@ const IconColorSlider = ({data,title}) => {
           slidesPerView={5.5}
           spaceBetween={3}
           centeredSlides={true}
-          initialSlide={middle}
-          thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs]}
+          initialSlide={!!location.search ? indexActiveItem : middle}
+          slideToClickedSlide={true}
           watchSlidesProgress={true}
           className="mySwiper"
         >

@@ -18,7 +18,6 @@
 }
 
 .wrapper-mobile > .header {
-  position: relative;
   max-width: 500px;
 }
 
@@ -98,11 +97,12 @@ main {
   font-size: calc(12px + 13 * (100vw/1920));
   -webkit-transition: .2s;
   transition: .2s;
+
 }
 
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   display: -webkit-box;
@@ -112,6 +112,11 @@ main {
   align-items: flex-end;
   z-index: 5;
   padding: 30px calc(15px + 35 * (100vw / 1920));
+  transition: 1s;
+}
+
+.header.hide {
+  transform: translateY(-100%);
 }
 
 .dark {
@@ -7544,6 +7549,10 @@ a:after {
 
 @media (max-width: 415px) {
 
+  body {
+    background: #ffffff;
+  }
+
   .wrapper {
     padding: 20px 26px;
   }
@@ -7588,6 +7597,7 @@ a:after {
 
   .block-title-box {
     height: 64px;
+    margin-top: 65px;
   }
 
   .icon-item {
@@ -7712,6 +7722,7 @@ a:after {
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-top: 70px;
   }
 
 
@@ -7895,6 +7906,7 @@ a:after {
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-top: 62px;
   }
 
 
