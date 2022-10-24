@@ -42,13 +42,6 @@ const Header = () => {
     allStrapiProducts
   } = useStaticQuery(query)
 
-  // let prevScrollPos = window.pageYOffset;
-
-  // window.addEventListener("scroll", () => {
-  //   // let currentScrollPos = window.pageYOffset;
-  // })
-
-
   const dropDownRef = useRef()
 
   const [menuOpen, setMenuOpen] = useState(false)
@@ -63,11 +56,11 @@ const Header = () => {
 
     let prevScrollPos = window.pageYOffset;
 
-    const headerBlock = document.getElementById("top");
+    const headerBlock = document.getElementById("header");
     window.addEventListener("scroll", () => {
         let currentScrollPos = window.pageYOffset;
 
-        if(prevScrollPos < currentScrollPos) {
+        if(prevScrollPos < currentScrollPos && !menuOpen) {
           headerBlock.classList.add('hide');
         } else {
           headerBlock.classList.remove('hide');
@@ -87,11 +80,13 @@ const Header = () => {
     setMenuOpen(!menuOpen)
   }
   return (
+    <>
+      <div id={"top"}></div>
     <header
       className={
       "header header-block wrapper"
       }
-      id={"top"}
+      id={"header"}
     >
       <a href="/">
           <img
@@ -183,6 +178,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </>
   )
 }
 
